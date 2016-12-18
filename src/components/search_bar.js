@@ -22,9 +22,15 @@ class SearchBar extends Component {
     // ={onInputChange}
     // ... with a function defined:
     // onInputChange(e) { console.log(e.target.value); }
+
+    // This is a *controlled component*. The value is set by React, rather than
+    // directly by the user input, ie. the state controls what's displayed
+    // in the component.
     return (
       <div>
-        <input onChange={e => this.setState({ term: e.target.value })} />
+        <input
+          value={this.state.term}
+          onChange={e => this.setState({ term: e.target.value })} />
         Value of the input: {this.state.term}
       </div>
     );
