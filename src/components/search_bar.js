@@ -22,7 +22,12 @@ class SearchBar extends Component {
     // ={onInputChange}
     // ... with a function defined:
     // onInputChange(e) { console.log(e.target.value); }
-    return <input onChange={e => console.log(e.target.value)} />;
+    return (
+      <div>
+        <input onChange={e => this.setState({ term: e.target.value })} />
+        Value of the input: {this.state.term}
+      </div>
+    );
   }
 
   // This is unused, but left here to see how it can be defined and
